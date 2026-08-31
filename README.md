@@ -1,5 +1,7 @@
 # CordFind Generator Compatibility MCP Server
 
+[![MCPVault listing](https://mcpvault.io/badge/cordfind-mcp.svg)](https://mcpvault.io/servers/cordfind-mcp)
+
 [CordFind](https://cordfind.com/) provides a public Model Context Protocol server for generator cord, plug, connector, and sizing research.
 
 ## Connect
