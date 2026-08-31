@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.gokimedia/cordfind-generator-compatibility",
+  "title": "CordFind Generator Compatibility",
+  "description": "Search generator guides, check connector compatibility, and plan generator cord size.",
+  "version": "1.0.0",
+  "websiteUrl": "https://cordfind.com/mcp",
+  "repository": {
+    "url": "https://github.com/gokimedia/cordfind-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://cordfind.com/api/mcp"
+    }
+  ]
+}
