@@ -1,0 +1,51 @@
+{
+  "name": "cordfind-mcp",
+  "version": "1.1.0",
+  "description": "CordFind generator guide search, connector compatibility, and cord-size planning as an MCP server.",
+  "type": "module",
+  "bin": {
+    "cordfind-mcp": "bin/cordfind-mcp.mjs"
+  },
+  "files": [
+    "bin",
+    "LICENSE",
+    "README.md",
+    "server.json"
+  ],
+  "scripts": {
+    "start": "node bin/cordfind-mcp.mjs",
+    "test": "node --test",
+    "pack:check": "npm pack --dry-run --json"
+  },
+  "mcpName": "io.github.gokimedia/cordfind-generator-compatibility",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "generator",
+    "generator-cord",
+    "electrical",
+    "connector-compatibility",
+    "cord-size"
+  ],
+  "author": "gokimedia",
+  "license": "MIT",
+  "homepage": "https://cordfind.com/mcp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gokimedia/cordfind-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gokimedia/cordfind-mcp/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.0.0",
+    "zod": "^4.5.4"
+  }
+}

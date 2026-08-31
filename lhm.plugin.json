@@ -1,0 +1,133 @@
+{
+  "identifier": "cordfind-mcp",
+  "name": "CordFind Generator Compatibility",
+  "version": "1.1.0",
+  "author": "gokimedia",
+  "authorUrl": "https://github.com/gokimedia",
+  "category": "tools",
+  "cloudEndpoint": "https://cordfind.com/api/mcp",
+  "description": "Search generator guides, screen connector compatibility, and estimate generator extension-cord gauge with direct CordFind source URLs.",
+  "homepage": "https://cordfind.com/mcp",
+  "icon": "🔌",
+  "tags": [
+    "generator",
+    "electrical",
+    "connector",
+    "cord-size",
+    "safety"
+  ],
+  "tools": [
+    {
+      "name": "search_generator_guides",
+      "description": "Search CordFind for generator cords, plugs, sizing, transfer equipment, maintenance, and safety guidance. Results include direct CordFind source URLs.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 100,
+            "description": "Generator topic or question"
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10,
+            "default": 5,
+            "description": "Maximum results"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    },
+    {
+      "name": "get_connector_compatibility",
+      "description": "Screen a generator outlet, destination, and cord distance for direct compatibility, adapter needs, verification boundaries, or unsafe paths.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "sourceConnectorId": {
+            "type": "string",
+            "enum": [
+              "520",
+              "1450",
+              "l1430",
+              "l1420",
+              "l630",
+              "l530",
+              "cs50",
+              "tt30"
+            ]
+          },
+          "targetId": {
+            "type": "string",
+            "enum": [
+              "inlet",
+              "rv",
+              "appliance",
+              "distribution"
+            ]
+          },
+          "distanceFeet": {
+            "type": "number",
+            "enum": [
+              25,
+              50,
+              100
+            ]
+          }
+        },
+        "required": [
+          "sourceConnectorId",
+          "targetId",
+          "distanceFeet"
+        ]
+      }
+    },
+    {
+      "name": "calculate_generator_cord_size",
+      "description": "Compare common American Wire Gauge sizes using load current, voltage, one-way distance, and a voltage-drop planning limit.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "amps": {
+            "type": "number",
+            "enum": [
+              15,
+              20,
+              30,
+              50
+            ]
+          },
+          "volts": {
+            "type": "number",
+            "enum": [
+              120,
+              240
+            ]
+          },
+          "distanceFeet": {
+            "type": "number",
+            "minimum": 10,
+            "maximum": 200
+          },
+          "dropLimitPercent": {
+            "type": "number",
+            "enum": [
+              3,
+              5
+            ],
+            "default": 3
+          }
+        },
+        "required": [
+          "amps",
+          "volts",
+          "distanceFeet"
+        ]
+      }
+    }
+  ]
+}

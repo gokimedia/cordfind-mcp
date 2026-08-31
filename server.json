@@ -3,12 +3,24 @@
   "name": "io.github.gokimedia/cordfind-generator-compatibility",
   "title": "CordFind Generator Compatibility",
   "description": "Search generator guides, check connector compatibility, and plan generator cord size.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "websiteUrl": "https://cordfind.com/mcp",
   "repository": {
     "url": "https://github.com/gokimedia/cordfind-mcp",
     "source": "github"
   },
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "cordfind-mcp",
+      "version": "1.1.0",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
   "remotes": [
     {
       "type": "streamable-http",

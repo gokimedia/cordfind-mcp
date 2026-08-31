@@ -1,11 +1,38 @@
 # CordFind Generator Compatibility MCP Server
 
+<!-- mcp-name: io.github.gokimedia/cordfind-generator-compatibility -->
+
 [![MCPVault listing](https://mcpvault.io/badge/cordfind-mcp.svg)](https://mcpvault.io/servers/cordfind-mcp)
 [![AllMCPs Verified](https://allmcps.com/api/badge/cordfind-generator-compatibility-mcp?style=shield)](https://allmcps.com/mcp/cordfind-generator-compatibility-mcp)
 
 [CordFind](https://cordfind.com/) provides a public Model Context Protocol server for generator cord, plug, connector, and sizing research.
 
 ## Connect
+
+### Installable stdio server
+
+Run the public npm package from Claude Desktop, Cursor, VS Code, Codex, or another stdio MCP client:
+
+```json
+{
+  "mcpServers": {
+    "cordfind": {
+      "command": "npx",
+      "args": ["-y", "cordfind-mcp"]
+    }
+  }
+}
+```
+
+The package is a small read-only stdio bridge to CordFind's canonical hosted MCP endpoint. No API key is required.
+
+You can also run it directly:
+
+```bash
+npx -y cordfind-mcp
+```
+
+### Hosted Streamable HTTP server
 
 Use the hosted Streamable HTTP endpoint:
 
@@ -30,6 +57,13 @@ Clients that only support local stdio servers can use `mcp-remote`:
     }
   }
 }
+```
+
+### Docker
+
+```bash
+docker build -t cordfind-mcp .
+docker run --rm -i cordfind-mcp
 ```
 
 The server is public and does not require an API key. Read the full [CordFind MCP documentation](https://cordfind.com/mcp).
@@ -72,7 +106,7 @@ Open the [generator cord-size calculator](https://cordfind.com/generator-cord-si
 
 ## Registry manifest
 
-The official MCP Registry manifest is available in [`server.json`](./server.json) and from CordFind at:
+The official MCP Registry manifest is available in [`server.json`](./server.json). It describes both the npm stdio package and the hosted Streamable HTTP endpoint. CordFind also publishes the manifest at:
 
 ```text
 https://cordfind.com/.well-known/mcp/server.json
