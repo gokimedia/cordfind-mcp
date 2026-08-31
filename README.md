@@ -86,6 +86,9 @@ CordFind MCP responses are planning guidance, not approval for an electrical ins
 
 - [CordFind](https://cordfind.com/)
 - [MCP server documentation](https://cordfind.com/mcp)
+- [Official MCP Registry record](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.gokimedia%2Fcordfind-generator-compatibility/versions/latest)
+- [Smithery server page](https://smithery.ai/servers/gokimedia/cordfind)
+- [Glama connector page](https://glama.ai/mcp/connectors/io.github.gokimedia/cordfind-generator-compatibility)
 - [Generator plug library](https://cordfind.com/generator-plug)
 - [Generator cord-size calculator](https://cordfind.com/generator-cord-size-calculator)
 
